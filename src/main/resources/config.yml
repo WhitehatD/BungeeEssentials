@@ -1,0 +1,81 @@
+jedis:
+  host: 127.0.0.1
+  port: 6379
+  password: "pass"
+
+messages:
+  prefix: "&7[&cBungeeEssentials&7] "
+  no-perm: "&cYou don't have permission."
+  no-num: "&cInvalid number!"
+  tp:
+    invalid-coords: "&cInvalid coordinates!"
+    success: "&aSuccessfully teleported to %location%"
+    success-other: "&aSuccessfully teleported %player% to %target%"
+    invalid-server: "&cInvalid server!"
+    invalid-player: "&cInvalid player!"
+
+    cannot-go: "&cYou don't have permission to go to this server."
+    usage:
+      - "&cTeleports"
+      - "&e /tb [posx] [posy] [posz] <server>"
+      - "&e /tb [name] <name> (second name used for admin forced TP)"
+      - "&e /tbr (tp request)"
+      - "&e /tba (tp accept)"
+      - "&e /tbh (tp here)"
+
+  tbr:
+    usage: "&7Usage: &d/tbr [player] - &7sends a tp request to a player"
+    sent: "&eYou have sent a tp request to &d%target%&e. They have &d15 seconds &eto accept."
+
+    # this is the same message for tbh
+    already-sent: "&cThis player already has a pending teleportation. Please wait for it to expire and try again."
+
+    received: "&eYou have received a tp request from &d%target%&e. You have &d15 seconds &eto accept. Type &d/tba &eto accept."
+  tba:
+    no-req: "&cYou don't have any pending teleportation."
+    error: "&cThe player who wanted to teleport is no longer online."
+    success: "&aAccepted the teleportation request."
+  tbh:
+    usage: "&7Usage: &d/tbh [player] - &7asks a player to tp to you"
+    sent: "&eYou asked &d%target%&e to teleport to you. They have &d15 seconds &eto accept."
+    received: "&d%target%&e asked you to teleport to them. You have &d15 seconds &eto accept. Type &d/tba &eto accept."
+  setwarp:
+    usage: "&7Usage: &d/setwarp [name] &7- sets a warp at your location"
+    already-exist: "&cThis warp already exists. Please delete it with &d/delwarp &cand try again."
+    success: "&aSuccessfully set warp %name% at your current location."
+  delwarp:
+    usage: "&7Usage: &d/delwarp [name] &7- deletes a warp"
+    no-exist: "&cInvalid warp!"
+    success: "&aSuccessfully deleted warp %name%."
+  warp:
+    usage: "&7Usage: &d/<w/warp> [list|name] &7- lists the warps | warps you to that warp"
+    no-exist: "&cInvalid warp!"
+    success: "&aSuccessfully tp-ed to warp %name%."
+    list: "&cWarps list: &d%warps%"
+  chat:
+    staff: "&aToggled to &cStaff &achat."
+    global: "&aToggled to &cGlobal &achat."
+    format: "&d%player%&7: &e%message%"
+    staff-format: "&c[STAFF] &d%player%&7: &e%message%"
+  speed:
+    usage: "&7Usage: &d/speed [1-10] &7- sets both the walk speed and fly speed to a number"
+    success: "&aSuccessfully set walk and fly speed to &d%number%&a."
+  flyspeed:
+    usage: "&7Usage: &d/flyspeed [1-10] &7- sets fly speed to a number"
+    success: "&aSuccessfully set fly speed to &d%number%&a."
+  walkspeed:
+    usage: "&7Usage: &d/walkspeed [1-10] &7- sets walk speed to a number"
+    success: "&aSuccessfully set walk speed to &d%number%&a."
+  home:
+    usage: "&7Usage: &d/home [home] &7- teleports to that home"
+    list: "&7Home list: &d%homes%"
+    success: "&aSuccessfully teleported to home &d%home%"
+    no-home: "&cThis home doesn't exist."
+  sethome:
+    usage: "&7Usage: &d/sethome [home] &7- sets a home at your location"
+    already: "&cThis home already exists!"
+    success: "&aSuccessfully set home &d%home% &aat your current location."
+  delhome:
+    usage: "&7Usage: &d/delhome [home] &7- deletes a home"
+    no-home: "&cThis home doesn't exist."
+    success: "&aSuccessfully deleted home &d%home%&a."

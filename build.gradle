@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "7.0.0"
+}
+
+
+group 'me.whitehatd.BungeeEssentials'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    mavenLocal()
+}
+
+dependencies {
+    compileOnly 'net.md-5:bungeecord-api:1.18-R0.1-SNAPSHOT'
+    implementation 'redis.clients:jedis:4.0.1'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+
+}
+
+shadowJar {
+    destinationDir = file('C:\\Users\\Alex\\Desktop\\bungee 1.18\\bungeecord\\plugins')
+}

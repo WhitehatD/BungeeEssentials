@@ -1,0 +1,5 @@
+main: me.whitehatd.BungeeEssentials.Core
+version: 1.0
+api-version: 1.18
+author: WhitehatD
+name: BungeeEssentials
