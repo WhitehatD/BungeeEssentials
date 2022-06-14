@@ -54,9 +54,14 @@ public class TpCommand extends Command implements TabExecutor {
                         }
                     });
                 } else {
-                    core.getExecutor().submit(() -> {
-                        player.connect(target.getServer().getInfo());
-                    });
+
+                    if(!target.getServer().getInfo().canAccess(player)) {
+                        core.getChatUtil().cmessage(player, "messages.tp.cannot-go");
+                        return;
+                    }
+                        core.getExecutor().submit(() -> {
+                         player.connect(target.getServer().getInfo());
+                        });
 
                     core.getExecutor().submit(() -> {
                         try(Jedis jedis = core.getJedisPool().getResource()) {
